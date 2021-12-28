@@ -1,7 +1,8 @@
-// pasted from https://dev.to/programliftoff/create-a-basic-webpage-with-css-and-javascript--104i
-
-document.getElementById('date').innerHTML = new Date().toDateString();
-
-function myFunction() {
-  document.getElementById("frm1").submit();
+function protagSubmit() {
+  let x = document.getElementById("frm1");
+  let protag = "";
+  for (let i = 0; i < (x.length - 1) ;i++) {
+    protag += x.elements[i].value + "<br>";
+  }
+  document.getElementById("protag name").innerHTML = protag;
 }
