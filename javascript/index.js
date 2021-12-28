@@ -2,5 +2,5 @@
 
 document.getElementById('date').innerHTML = new Date().toDateString();
 
-var protag = window.prompt("Enter your name: ");
-alert("Your name is " + protag);
+const input = prompt("What's your name?");
+alert(`Your name is ${input}`);
