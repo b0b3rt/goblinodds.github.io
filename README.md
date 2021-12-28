@@ -1,1 +1,1 @@
-# storygen
+# goblinodds
