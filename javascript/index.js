@@ -2,5 +2,6 @@
 
 document.getElementById('date').innerHTML = new Date().toDateString();
 
-const input = prompt("What's your name?");
-alert(`Your name is ${input}`);
+function myFunction() {
+  document.getElementById("frm1").submit();
+}
