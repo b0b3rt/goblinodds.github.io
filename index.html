@@ -6,28 +6,27 @@
     <title>name TBD - story generator</title>
   </head>
 
-  <body>
-    <h1>choose your protagonist</h1>
+<main id="main">
+
+  <section>
+    <button onclick="majorArcanaGen()">randomize</button>
+    <h1>protagonist</h1>  
+    <p id="major-arcana">test</p>
+  
+  </section>
+
+</main>
+
+<footer>
+  
+  <p>
+    <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" id="copyright">no rights reserved.
+    </p>
     
-    <!-- TEST FORM --> 
-      <form id="frm1">
-        major arcana: <input type="text" name="fprotag" value="default"><br><br>
-        <input type="button" onclick="protagSubmit()" value="submit">
-      </form> 
+  <p id="email">contact <a href="mailto:goblinodds@gmail.com">goblinodds</a>   
+  </p> 
+  
+</footer>
 
-    <p id="protag name"></p>
-
-    <!-- <script>
-      function protagSubmit() {
-        let x = document.getElementById("frm1");
-        let protag = "";
-        for (let i = 0; i < (x.length - 1) ;i++) {
-          protag += x.elements[i].value + "<br>";
-        }
-        document.getElementById("protag name").innerHTML = protag;
-      }
-    </script> -->
-
-  </body>
 
 </html>

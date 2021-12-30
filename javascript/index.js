@@ -1,8 +1,32 @@
-function protagSubmit() {
-  let x = document.getElementById("frm1");
-  let protag = "";
-  for (let i = 0; i < (x.length - 1) ;i++) {
-    protag += x.elements[i].value + "<br>";
-  }
-  document.getElementById("protag name").innerHTML = protag;
+function majorArcanaGen() {
+  
+  const majorArcana = [
+    'The Fool',
+    'The Magician',
+    'The High Priestess',
+    'The Empress',
+    'The Emperor',
+    'The Hierophant',
+    'The Lovers',
+    'The Chariot',
+    'Justice',
+    'The Hermit',
+    'Wheel of Fortune',
+    'Strength',
+    'The Hanged Man',
+    'Death',
+    'Temperance',
+    'The Devil',
+    'The Tower',
+    'The Star',
+    'The Moon',
+    'The Sun',
+    'Judgement',
+    'The World'
+  ]
+
+  let currentArcana = majorArcana[Math.floor(Math.random() * majorArcana.length)];
+                  
+  document.getElementById('major-arcana').innerHTML = currentArcana;
+  
 }
