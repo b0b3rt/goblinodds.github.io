@@ -1,32 +1,36 @@
-function majorArcanaGen() {
+function heroGen() {
   
-  const majorArcana = [
-    'The Fool',
-    'The Magician',
-    'The High Priestess',
-    'The Empress',
-    'The Emperor',
-    'The Hierophant',
-    'The Lovers',
-    'The Chariot',
-    'Justice',
-    'The Hermit',
-    'Wheel of Fortune',
-    'Strength',
-    'The Hanged Man',
-    'Death',
-    'Temperance',
-    'The Devil',
-    'The Tower',
-    'The Star',
-    'The Moon',
-    'The Sun',
-    'Judgement',
-    'The World'
+  const hero = [
+    {archetype: 'The Reformer',
+    shadow: 'The Zealot'},
+    {archetype: 'The Helper',
+    shadow: 'The Martyr'},
+    {archetype: 'The Achiever',
+    shadow: 'The Grasper'},
+    {archetype: 'The Individualist',
+    shadow: 'The Recluse'},
+    {archetype: 'The Investigator',
+    shadow: 'The Conspiracist'},
+    {archetype: 'The Loyalist',
+    shadow: 'The Flagellant'},
+    {archetype: 'The Enthusiast',
+    shadow: 'The Addict'},
+    {archetype: 'The Challenger',
+    shadow: 'The Megalomaniac'},
+    {archetype: 'The Peacemaker',
+    shadow: 'The Appeaser'}
   ]
 
-  let currentArcana = majorArcana[Math.floor(Math.random() * majorArcana.length)];
-                  
-  document.getElementById('major-arcana').innerHTML = currentArcana;
+  let currentHero = hero[Math.floor(Math.random() * hero.length)];
+
+  document.getElementById('hero').innerHTML = currentHero['archetype'];
+  document.getElementById('shadow').innerHTML = currentHero['shadow'];
   
 }
+
+
+/*
+
+more ideas to include
+
+*/
