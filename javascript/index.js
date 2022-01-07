@@ -1,3 +1,4 @@
+// ARCHETYPES
 function heroGen() {
 
   // DEFINE HEROES
@@ -99,10 +100,21 @@ function heroGen() {
 
   document.getElementById('hero').innerHTML = currentHero['archetype']['enneagram'];
   document.getElementById('shadow').innerHTML = currentHero['shadow'];
+  document.getElementById('button-designs').style.display = "flex";
+
+  // declares a global variable that has the value of currentHero
+  // so you can use this global variable in other functions
+  selectedHero = currentHero
+
+}
+
+
+// CHARACTER DESIGNS
+function heroDesign() {
 
   // CHARACTER DESIGNS
 
-  let heroShape1 = currentHero['archetype']['shape1'];
+  let heroShape1 = selectedHero['archetype']['shape1'];
   let heroShape2;
   let heroShape3;
 
@@ -110,7 +122,7 @@ function heroGen() {
   // encodes that hero's primary shape to the 2ndary shape variable
   for (let i = 0; i < hero.length; i++) {
     for (let key in hero) {
-      if (hero[i]['archetype']['enneagram'] === currentHero['archetype']['growth']) {
+      if (hero[i]['archetype']['enneagram'] === selectedHero['archetype']['growth']) {
         heroShape2 = hero[i]['archetype']['shape1'];
         break;
       }
@@ -121,25 +133,57 @@ function heroGen() {
   // encodes that hero's primary shape to the 3tiary shape variable
   for (let i = 0; i < hero.length; i++) {
     for (let key in hero) {
-      if (hero[i]['archetype']['enneagram'] === currentHero['archetype']['stress']) {
+      if (hero[i]['archetype']['enneagram'] === selectedHero['archetype']['stress']) {
         heroShape3 = hero[i]['archetype']['shape1'];
         break;
       }
     }
   }
+/*
+  // CHARACTER COLOR SCHEMES
+  // **** BREAKS ARCHETYPES BUTTON
 
+  let r = 0;
+  let g = 0;
+  let b = 0;
+
+  // put below into an if statement about how
+  // if selectedHero is x then math.random for the range for the relevant hero type
+  // so it adds to the 0 
+
+  let heroR = Math.floor(Math.random() * 255;
+  let heroG = Math.floor(Math.random() * 255;
+  let heroB = Math.floor(Math.random() * 255;
+
+
+  // something that takes these into the rbga code
+  // use getElementByID('id').style.display = "blahblah"; to change color
+*/
   document.getElementById('hero-shape1').innerHTML = 'primary shape: ' + heroShape1;
   document.getElementById('hero-shape2').innerHTML = 'secondary shape: ' + heroShape2;
   document.getElementById('hero-shape3').innerHTML = 'tertiary shape: ' + heroShape3; 
   document.getElementById('shadow-shape1').innerHTML = 'primary shape: ' + heroShape3;
   document.getElementById('shadow-shape2').innerHTML = 'secondary shape: ' + heroShape1;
   document.getElementById('shadow-shape3').innerHTML = 'primary shape: ' + heroShape2; 
+
+  document.getElementById('swatch-hero').style.display = "block";
+  document.getElementById('swatch-shadow').style.display = "block";
+
+  document.getElementById('button-archetype').style.pointerEvents = "none";
+  document.getElementById('button-archetype').style.opacity = "0.5";
+
+
 }
 
-// try to get shape to match to random:
-// head, torso, legs
+// make SEPARATE BUTTONS for things you want to be able to roll separately
+// figure out shape language visualization
 
 /*
+
+COLORS
+0 - 255 in rgba
+assign a range for each r g b
+pick random #s for each from range
 
 CHARACTER DESIGN: SHAPE LANGUAGES
 

@@ -9,23 +9,37 @@
 <main id="main">
 
   <section>
-    <button onclick="heroGen()">generate</button>
+
+    <div id="buttons">
+      <button id="button-archetype" onclick="heroGen()">generate archetypes</button>
+      <br>
+      <button id="button-designs" onclick="heroDesign()">character designs</button>
+    </div>
+
     <container>
       <div id="protagonist">
         <h1>PROTAGONIST</h1> 
         <h2 id="hero"></h2>
-        <p id="hero-shape1"></p>
-        <p id="hero-shape2"></p>
-        <p id="hero-shape3"></p>
+        <p class="designs" id="hero-shape1"></p>
+        <p class="designs" id="hero-shape2"></p>
+        <p class="designs" id="hero-shape3"></p>
+        <p class="designs" id="hero-head"></p>
+        <div class="swatches">
+          <div id="swatch-hero"></div>
+        </div>
       </div>
      
-     <div id="antagonist">
-       <h1>ANTAGONIST</h1>
-       <h2 id="shadow"></h2>
-       <p id="shadow-shape1"></p>
-       <p id="shadow-shape2"></p>
-       <p id="shadow-shape3"></p>
-     </div>
+      <div id="antagonist">
+        <h1>ANTAGONIST</h1>
+        <h2 id="shadow"></h2>
+        <p class="designs" id="shadow-shape1"></p>
+        <p class="designs" id="shadow-shape2"></p>
+        <p class="designs" id="shadow-shape3"></p>
+        <p class="designs" id="shadow-head"></p>
+        <div class="swatches">
+          <div id="swatch-shadow"></div>
+        </div>
+      </div>
    </container>
   </section>
 

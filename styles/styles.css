@@ -17,7 +17,7 @@ h1 {
 container {
   display: flex;
   flex-wrap: wrap; /* seems broken */
-  justify-content:  space-evenly;
+  justify-content: space-evenly;
 }
 
 footer {
@@ -27,11 +27,39 @@ footer {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-
 }
 
-.rectangle {
+#buttons {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto; /* centers */
+}
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap; /* seems broken */
+  justify-content: space evenly;
+  flex-direction: row;
+}
+
+#swatch-hero {
   height: 50px;
   width: 50px;
   background-color: #555;
+  margin: .1em;
+  display: none;
+}
+
+#swatch-shadow {
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+  margin: .1em;
+  display: none;
+}
+
+button#button-designs {
+  display: none;
+  justify-content: center; /* centers text; doesn't work w parent */
 }
