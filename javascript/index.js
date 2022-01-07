@@ -8,7 +8,8 @@ function heroGen() {
       enneagram: 'The Reformer',
       shape1: 'rectangle',
       growth: 'The Enthusiast',
-      stress: 'The Individualist'
+      stress: 'The Individualist',
+      dominantColor: 'blue'
       },
     shadow: 'The Zealot'
   };
@@ -18,7 +19,8 @@ function heroGen() {
       enneagram: 'The Helper',
       shape1: 'circle',
       growth: 'The Individualist',
-      stress: 'The Challenger'
+      stress: 'The Challenger',
+      dominantColor: 'green'
       },
     shadow: 'The Martyr'
   };
@@ -28,7 +30,8 @@ function heroGen() {
       enneagram: 'The Achiever',
       shape1: 'rectangle',
       growth: 'The Loyalist',
-      stress: 'The Peacemaker'
+      stress: 'The Peacemaker',
+      dominantColor: 'red'
     },
     shadow: 'The Grasper'
   };
@@ -38,7 +41,8 @@ function heroGen() {
       enneagram: 'The Individualist',
       shape1: 'triangle',
       growth: 'The Reformer',
-      stress: 'The Helper'
+      stress: 'The Helper',
+      dominantColor: 'green'
       },
     shadow: 'The Recluse'
   };  
@@ -48,7 +52,8 @@ function heroGen() {
       enneagram: 'The Investigator',
       shape1: 'rectangle',
       growth: 'The Challenger',
-      stress: 'The Enthusiast'
+      stress: 'The Enthusiast',
+      dominantColor: 'blue'
       },
     shadow: 'The Conspiracist'
   };  
@@ -58,7 +63,8 @@ function heroGen() {
       enneagram: 'The Loyalist',
       shape1: 'circle',
       growth: 'The Peacemaker',
-      stress: 'The Achiever'
+      stress: 'The Achiever',
+      dominantColor: 'blue'
       },
     shadow: 'The Flagellant'
   };  
@@ -68,7 +74,8 @@ function heroGen() {
       enneagram: 'The Enthusiast',
       shape1: 'triangle',
       growth: 'The Investigator',
-      stress: 'The Reformer'
+      stress: 'The Reformer',
+      dominantColor: 'red'
       },
     shadow: 'The Addict'
   };  
@@ -78,7 +85,8 @@ function heroGen() {
       enneagram: 'The Challenger',
       shape1: 'triangle',
       growth: 'The Helper',
-      stress: 'The Investigator'
+      stress: 'The Investigator',
+      dominantColor: 'red'
       },
     shadow: 'The Megalomaniac'
   };  
@@ -88,7 +96,8 @@ function heroGen() {
       enneagram: 'The Peacemaker',
       shape1: 'circle',
       growth: 'The Achiever',
-      stress: 'The Loyalist'
+      stress: 'The Loyalist',
+      dominantColor: 'green'
       },
     shadow: 'The Appeaser'
   };  
@@ -139,26 +148,54 @@ function heroDesign() {
       }
     }
   }
-/*
+
   // CHARACTER COLOR SCHEMES
-  // **** BREAKS ARCHETYPES BUTTON
 
   let r = 0;
   let g = 0;
   let b = 0;
+  let dominantColor = selectedHero['archetype']['dominantColor'];
 
-  // put below into an if statement about how
-  // if selectedHero is x then math.random for the range for the relevant hero type
-  // so it adds to the 0 
+  // DEFINE randomized R G B values based on ENNEAGRAM
+ 
+  if (dominantColor === 'blue') {   
+    b = Math.floor(Math.random() * 255);
+    r = Math.floor(Math.random() * b);
+    g = Math.floor(Math.random() * b);
+  }
 
-  let heroR = Math.floor(Math.random() * 255;
-  let heroG = Math.floor(Math.random() * 255;
-  let heroB = Math.floor(Math.random() * 255;
+  else if (dominantColor === 'red') {
+    r = Math.floor(Math.random() * 255);
+    b = Math.floor(Math.random() * r);
+    g = Math.floor(Math.random() * r);
+  }
 
+  else {
+    g = Math.floor(Math.random() * 255);
+    b = Math.floor(Math.random() * g);
+    r = Math.floor(Math.random() * g);
+  }
+
+  let rgba = 'rgba(' + r + ', ' + g + ', ' + b + ', ' + '1)';
+
+  let rInvert = 255 - r;
+  let gInvert = 255 - g;
+  let bInvert = 255 - b;
+
+  let rgbaInvert = 'rgba(' + rInvert + ', ' + gInvert + ', ' + bInvert + ', ' + '1)';
+
+  document.getElementById('swatch-hero').style.backgroundColor = rgba;
+  document.getElementById('swatch-shadow').style.backgroundColor = rgbaInvert;
+
+/*
 
   // something that takes these into the rbga code
   // use getElementByID('id').style.display = "blahblah"; to change color
+
+  //pick HIGHLIGHT color based randomly on complimenetary or analogous etc.
+  //SHADOW just gets these flipped
 */
+
   document.getElementById('hero-shape1').innerHTML = 'primary shape: ' + heroShape1;
   document.getElementById('hero-shape2').innerHTML = 'secondary shape: ' + heroShape2;
   document.getElementById('hero-shape3').innerHTML = 'tertiary shape: ' + heroShape3; 
