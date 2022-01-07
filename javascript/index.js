@@ -10,7 +10,7 @@ function heroGen() {
       growth: 'The Enthusiast',
       stress: 'The Individualist',
       dominantColor: 'blue'
-      },
+    },
     shadow: 'The Zealot'
   };
 
@@ -21,7 +21,7 @@ function heroGen() {
       growth: 'The Individualist',
       stress: 'The Challenger',
       dominantColor: 'green'
-      },
+    },
     shadow: 'The Martyr'
   };
   
@@ -43,7 +43,7 @@ function heroGen() {
       growth: 'The Reformer',
       stress: 'The Helper',
       dominantColor: 'green'
-      },
+    },
     shadow: 'The Recluse'
   };  
 
@@ -54,7 +54,7 @@ function heroGen() {
       growth: 'The Challenger',
       stress: 'The Enthusiast',
       dominantColor: 'blue'
-      },
+    },
     shadow: 'The Conspiracist'
   };  
 
@@ -65,7 +65,7 @@ function heroGen() {
       growth: 'The Peacemaker',
       stress: 'The Achiever',
       dominantColor: 'blue'
-      },
+    },
     shadow: 'The Flagellant'
   };  
 
@@ -76,7 +76,7 @@ function heroGen() {
       growth: 'The Investigator',
       stress: 'The Reformer',
       dominantColor: 'red'
-      },
+    },
     shadow: 'The Addict'
   };  
   
@@ -87,7 +87,7 @@ function heroGen() {
       growth: 'The Helper',
       stress: 'The Investigator',
       dominantColor: 'red'
-      },
+    },
     shadow: 'The Megalomaniac'
   };  
   
@@ -98,7 +98,7 @@ function heroGen() {
       growth: 'The Achiever',
       stress: 'The Loyalist',
       dominantColor: 'green'
-      },
+    },
     shadow: 'The Appeaser'
   };  
 
@@ -113,7 +113,9 @@ function heroGen() {
 
   // declares a global variable that has the value of currentHero
   // so you can use this global variable in other functions
-  selectedHero = currentHero
+  selectedHero = currentHero;
+
+  heroGlobal = hero;
 
 }
 
@@ -129,10 +131,10 @@ function heroDesign() {
 
   // iterates over heroes to find a hero whose enneagram matches the current hero's direction of growth
   // encodes that hero's primary shape to the 2ndary shape variable
-  for (let i = 0; i < hero.length; i++) {
-    for (let key in hero) {
-      if (hero[i]['archetype']['enneagram'] === selectedHero['archetype']['growth']) {
-        heroShape2 = hero[i]['archetype']['shape1'];
+  for (let i = 0; i < heroGlobal.length; i++) {
+    for (let key in heroGlobal) {
+      if (heroGlobal[i]['archetype']['enneagram'] === selectedHero['archetype']['growth']) {
+        heroShape2 = heroGlobal[i]['archetype']['shape1'];
         break;
       }
     }
@@ -140,10 +142,10 @@ function heroDesign() {
   
   // iterates over heroes to find a hero whose enneagram matches the current hero's direction of stress
   // encodes that hero's primary shape to the 3tiary shape variable
-  for (let i = 0; i < hero.length; i++) {
-    for (let key in hero) {
-      if (hero[i]['archetype']['enneagram'] === selectedHero['archetype']['stress']) {
-        heroShape3 = hero[i]['archetype']['shape1'];
+  for (let i = 0; i < heroGlobal.length; i++) {
+    for (let key in heroGlobal) {
+      if (heroGlobal[i]['archetype']['enneagram'] === selectedHero['archetype']['stress']) {
+        heroShape3 = heroGlobal[i]['archetype']['shape1'];
         break;
       }
     }
