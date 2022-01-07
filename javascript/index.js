@@ -158,7 +158,7 @@ function heroDesign() {
   let b = 0;
   let dominantColor = selectedHero['archetype']['dominantColor'];
 
-  // DEFINE randomized R G B values based on ENNEAGRAM
+  // DEFINE randomized RGB values based on ENNEAGRAM
  
   if (dominantColor === 'blue') {   
     b = Math.floor(Math.random() * 255);
@@ -180,23 +180,15 @@ function heroDesign() {
 
   let rgba = 'rgba(' + r + ', ' + g + ', ' + b + ', ' + '1)';
 
+  // find COMPLIMENTARY COLOR for shadow
+
   let rInvert = 255 - r;
   let gInvert = 255 - g;
   let bInvert = 255 - b;
 
   let rgbaInvert = 'rgba(' + rInvert + ', ' + gInvert + ', ' + bInvert + ', ' + '1)';
 
-  document.getElementById('swatch-hero').style.backgroundColor = rgba;
-  document.getElementById('swatch-shadow').style.backgroundColor = rgbaInvert;
-
-/*
-
-  // something that takes these into the rbga code
-  // use getElementByID('id').style.display = "blahblah"; to change color
-
-  //pick HIGHLIGHT color based randomly on complimenetary or analogous etc.
-  //SHADOW just gets these flipped
-*/
+  // SHAPES
 
   document.getElementById('hero-shape1').innerHTML = 'primary shape: ' + heroShape1;
   document.getElementById('hero-shape2').innerHTML = 'secondary shape: ' + heroShape2;
@@ -205,9 +197,13 @@ function heroDesign() {
   document.getElementById('shadow-shape2').innerHTML = 'secondary shape: ' + heroShape1;
   document.getElementById('shadow-shape3').innerHTML = 'primary shape: ' + heroShape2; 
 
+  // SWATCH colors
+  document.getElementById('swatch-hero').style.backgroundColor = rgba;
+  document.getElementById('swatch-shadow').style.backgroundColor = rgbaInvert;
   document.getElementById('swatch-hero').style.display = "block";
   document.getElementById('swatch-shadow').style.display = "block";
 
+  // lock out of GENERATE ARCHETYPES button
   document.getElementById('button-archetype').style.pointerEvents = "none";
   document.getElementById('button-archetype').style.opacity = "0.5";
 

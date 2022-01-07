@@ -39,7 +39,7 @@ footer {
 .swatches {
   display: flex;
   flex-wrap: wrap; /* seems broken */
-  justify-content: space evenly;
+  justify-content: center;
   flex-direction: row;
 }
 
